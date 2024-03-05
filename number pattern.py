@@ -184,25 +184,58 @@ for i in range(n):
 # 1 2 3 4 5 4 3 2 1
 
 
-
-n=5
-for i in range(n-1):
+n = 5
+for i in range(n - 1):
     # Print stars on the left side
     p = 1
     for j in range(i + 1):
-      print(p, end=' ')
-      p += 1
+        print(p, end=' ')
+        p += 1
     # Print spaces in the middle
-    for j in range(2 * (n - i)-4):
+    for j in range(2 * (n - i) - 4):
         print(' ', end=' ')
     # Print stars on the right side
     p = i + 1
     for j in range(i + 1):
-      print(p, end=' ')
-      p -= 1
+        print(p, end=' ')
+        p -= 1
     print()
 
 # 1             1
 # 1 2         2 1
 # 1 2 3     3 2 1
 # 1 2 3 4 4 3 2 1
+
+
+n = 5
+
+# Upper part of the hourglass
+for i in range(n - 1):
+    for j in range(i):
+        print("", end=" ")
+
+    p = i + 1
+    for j in range(i, n):
+        print(p, end=' ')
+        p += 1
+
+    print()
+
+for i in range(n, 0, -1):
+    for j in range(0, i - 1):
+        print(" ", end="")
+    for j in range(i, n + 1):
+        print(j, end=" ")
+    for j in range(0, i):
+        print(" ", end=" ")
+    print()
+
+# 1 2 3 4 5
+#  2 3 4 5
+#   3 4 5
+#    4 5
+#     5
+#    4 5
+#   3 4 5
+#  2 3 4 5
+# 1 2 3 4 5
